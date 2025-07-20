@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.OURJOURNEY {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: #0c0217;
+}
+
+#journeylist-container {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#journeylist-content {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: none;
+}
+
+#journeylist-content::-webkit-scrollbar {
+  width: 0;
+}
+
+#journeylist-content .event {
+  width: 1024px;
+  position: relative;
+  height: auto;
+  padding: 5%;
+  padding-right: 0%;
+  font-size: 1.1rem;
+  border-left: 1px dotted white;
+}
+
+#journeylist-content .event::before {
+  width: 21px;
+  height: 21px;
+  content: "";
+  border: 3px solid white;
+  border-radius: 50%;
+  position: absolute;
+  background-color: black;
+  left: -1%;
+}
+
+#journeylist-img {
+  /* width: 350px !important;
+  height: 150px !important; */
+  width: 70%;
+  max-width: 350px;
+}
+
+#journeylist-content #data-year {
+  position: absolute;
+  left: -10%;
+  color: white;
+}
+
+#journeylist-content #data-year-img {
+  position: absolute;
+  left: -10%;
+  top: 8.5%;
+  color: white;
+}
+
+#journeylist-modal {
+  margin-bottom: 5%;
+}
+
+#journeylist-modal .event {
+  position: relative;
+  width: 1086px;
+  height: auto;
+  padding: 5%;
+  font-size: 32px;
+  border-left: 1px dotted black;
+}
+
+#journeylist-modal .event::before {
+  width: 21px;
+  height: 21px;
+  content: "";
+  border: 3px solid black;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+  left: -1%;
+}
+
+#journeylist-modal #data-year {
+  position: absolute;
+  left: -10%;
+}
+
+#journeylist-modal #data-year-img {
+  position: absolute;
+  left: -10%;
+  top: 8%;
+}
+
+@media (max-width: 1200px) {
+  .OURJOURNEY {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Mulish", sans-serif;
+    color: white;
+    background-color: #0c0217;
+  }
+
+  #journeylist-container {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #journeylist-content {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: none;
+  }
+
+  #journeylist-content::-webkit-scrollbar {
+    width: 0;
+  }
+
+  #journeylist-content .event {
+    position: relative;
+    width: 750px;
+    height: auto;
+    padding: 5%;
+    font-size: 1.1rem;
+    border-left: 1px dotted white;
+  }
+
+  #journeylist-content .event::before {
+    width: 15px;
+    height: 15px;
+    content: "";
+    border: 3px solid white;
+    border-radius: 50%;
+    position: absolute;
+    background-color: black;
+    left: -1%;
+  }
+
+  #journeylist-content #data-year {
+    position: relative;
+    padding-left: 10%;
+  }
+
+  #journeylist-content #data-year-img {
+    position: relative;
+    padding-left: 10%;
+    top: 0%;
+  }
+
+  #journeylist-modal {
+    margin-bottom: 7.5%;
+  }
+
+  #journeylist-modal .event {
+    position: relative;
+    width: 750px;
+    height: auto;
+    padding: 5%;
+    font-size: 20px;
+    border-left: 1px dotted black;
+  }
+
+  #journeylist-modal .event::before {
+    width: 15px;
+    height: 15px;
+    content: "";
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    left: -1%;
+  }
+
+  #journeylist-modal #data-year {
+    position: relative;
+    padding-left: 10%;
+  }
+
+  /* #journeylist-img {
+    width: 300px !important;
+    height: 125px !important;
+  } */
+
+  #journeylist-modal #data-year-img {
+    position: relative;
+    padding-left: 10%;
+    top: 0%;
+  }
+}
+
+@media (max-width: 768px) {
+  .OURJOURNEY {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Mulish", sans-serif;
+    color: white;
+    background-color: #0c0217;
+  }
+
+
+  #journeylist-container {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #journeylist-content {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: none;
+  }
+
+  #journeylist-content::-webkit-scrollbar {
+    width: 0;
+  }
+
+  #journeylist-content .event {
+    position: relative;
+    /* width: 500px; */
+    width: 90%;
+    height: auto;
+    padding: 5%;
+    font-size: 1.1rem;
+    border-left: 1px dotted white;
+  }
+
+  #journeylist-content .event::before {
+    width: 10px;
+    height: 10px;
+    content: "";
+    border: 3px solid white;
+    border-radius: 50%;
+    position: absolute;
+    background-color: black;
+    left: -1%;
+  }
+
+  #journeylist-content #data-year {
+    position: relative;
+    padding-left: 10%;
+  }
+
+  #journeylist-content #data-year-img {
+    position: relative;
+    padding-left: 10%;
+    top: 0%;
+  }
+
+  .modal {
+    overflow: hidden;
+  }
+
+  .modal-dialog {
+    max-width: 100% !important;
+  }
+
+  .modal-dialog-centered {
+    margin-top: 20%;
+    min-height: 100% !important;
+  }
+
+  .modal-content {
+    border-radius: 30px 30px 0px 0px !important;
+    background-color: white;
+    color: black;
+  }
+
+  .modal-body {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #journeylist-modal {
+    margin-bottom: 17.5%;
+  }
+
+  #journeylist-modal .event {
+    position: relative;
+    width: 500px;
+    height: auto;
+    padding: 5%;
+    font-size: 20px;
+    border-left: 1px dotted black;
+  }
+
+  #journeylist-modal .event::before {
+    width: 10px;
+    height: 10px;
+    content: "";
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    left: -1%;
+  }
+
+  #journeylist-modal #data-year {
+    position: relative;
+    padding-left: 10%;
+  }
+
+  #journeylist-modal #data-year-img {
+    position: relative;
+    padding-left: 10%;
+    top: 0%;
+  }
+
+  #journeylist-img {
+    /* width: 250px !important; */
+    min-width: 150px;
+    /* height: 100px !important; */
+  }
+}

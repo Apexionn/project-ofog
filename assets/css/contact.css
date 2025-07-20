@@ -1,0 +1,135 @@
+body {
+    scroll-behavior: smooth;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    position: relative;
+}
+
+#content-container {
+    max-width: 1280px;
+    margin: 5% auto;
+    padding: 2% 5%;
+}
+
+#content-section{
+    display: flex;
+    flex-direction: row;
+    /* padding-bottom: 40px; */
+    /* flex-wrap: wrap; */
+}
+
+#content-left {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#content-left img {
+    width: 80%;
+    margin: auto;
+}
+
+#content-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+#content-right p {
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    margin-left: 5%;
+}
+
+#content-center {
+    background-color: #1B97D4;
+    width: 3px;
+}
+
+@media only screen and (max-width: 1024px) {
+    #content-container {
+        margin: 5%;
+        padding: 2% 5%;
+    }
+
+    #content-section{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #content-left {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #content-right {
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    #content-right p {
+        width: auto;
+        height: auto;
+        margin-left: 5%;
+    }
+
+    #content-center {
+        background-color: #1B97D4;
+        width: 3px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #content-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #content-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #content-left {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #content-left img {
+        width: 75%;
+        max-width: 360px;
+    }
+
+    #content-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #content-right p {
+        width: auto;
+        height: auto;
+        margin: 0%;
+        margin-top: 10%;
+    }
+
+    #content-container p{
+        text-align: center;
+    }
+
+    #content-center {
+        display: none;
+    }
+}

@@ -1,0 +1,152 @@
+#layerofog1,
+#layerofog2,
+#layerofog3,
+#layerofog4 {
+  animation: blink 1000ms infinite;
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#Logo path {
+  fill: none;
+}
+
+#Logo polygon {
+  fill: none;
+}
+
+#NewLogo2 path {
+  fill: none;
+  animation: fill 1s ease forwards 2.5s;
+}
+
+#NewLogo2 polygon {
+  fill: none;
+  animation: fill 1s ease forwards 2.5s;
+}
+
+#Line1 {
+  stroke-dasharray: 924.2089233398438;
+  stroke-dashoffset: 924.2089233398438;
+  animation: dash 1s ease forwards 0s;
+}
+
+#Line2 {
+  stroke-dasharray: 844.0354614257812;
+  stroke-dashoffset: 844.0354614257812;
+  animation: dash 1s ease forwards 0s;
+}
+
+#Line3 {
+  stroke-dasharray: 845.2944946289062;
+  stroke-dashoffset: 845.2944946289062;
+  animation: dash 1s ease forwards 0s;
+}
+
+#Line4 {
+  stroke-dasharray: 962.7130126953125;
+  stroke-dashoffset: 962.7130126953125;
+  animation: dash 1s ease forwards 0s;
+}
+
+#Line5 {
+  stroke-dasharray: 845.0272827148438;
+  stroke-dashoffset: 845.0272827148438;
+  animation: dash 1s ease forwards 0s;
+}
+
+#Line6 {
+  stroke-dasharray: 845.3660888671875;
+  stroke-dashoffset: 845.3660888671875;
+  animation: dash 1s ease forwards 0s;
+}
+
+#Line7 {
+  stroke-dasharray: 363.48114013671875;
+  stroke-dashoffset: 363.48114013671875;
+  animation: dash 0.5s ease forwards 1s;
+}
+
+#Line8 {
+  stroke-dasharray: 328.4219970703125;
+  stroke-dashoffset: 328.4219970703125;
+  animation: dash 0.5s ease forwards 1s;
+}
+
+#Line9 {
+  stroke-dasharray: 349.6482849121094;
+  stroke-dashoffset: 349.6482849121094;
+  animation: dash 0.5s ease forwards 1s;
+}
+
+#Line10 {
+  stroke-dasharray: 572.7504272460938;
+  stroke-dashoffset: 572.7504272460938;
+  animation: dash 0.5s ease forwards 1s;
+}
+
+#Line11 {
+  stroke-dasharray: 105.23030090332031;
+  stroke-dashoffset: 105.23030090332031;
+  animation: dash 1s ease forwards 1.25s;
+}
+
+#Line12 {
+  stroke-dasharray: 180.75070190429688;
+  stroke-dashoffset: 180.75070190429688;
+  animation: dash 1s ease forwards 1.25s;
+}
+
+#Line13 {
+  stroke-dasharray: 180.7417755126953;
+  stroke-dashoffset: 180.7417755126953;
+  animation: dash 1s ease forwards 1.25s;
+}
+
+#Line14 {
+  stroke-dasharray: 3252.256591796875;
+  stroke-dashoffset: 3252.256591796875;
+  animation: dash 1.5s ease forwards 1.75s;
+}
+
+#Line15 {
+  stroke-dasharray: 2211.351074218755;
+  stroke-dashoffset: 2211.35107421875;
+  animation: dash 1.5s ease forwards 1.75s;
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: white;
+  }
+}

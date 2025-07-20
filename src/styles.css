@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .nav{
+        @apply w-full z-10 duration-500;
+        background-color: #0C0217;
+    }
+
+    .wrapper-dark{
+        @apply text-white;
+        background-color: #0C0217;
+    }
+
+    .wrapper-light{
+        @apply text-black bg-white;
+    }
+
+    .transition{
+        @apply h-16;
+        border-radius: 0 0 9rem 9rem;
+        background-color: #0C0217;
+        box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.5);
+    }
+
+    .container{
+        @apply max-w-screen-2xl lg:px-12 lg:py-6 px-4 md:px-8 py-4 text-center m-auto;
+    }
+
+    .h1{
+        @apply uppercase text-3xl md:text-5xl font-extrabold text-center;
+    }
+
+    .h1-dark{
+        @apply h1;
+        color: #0C0217;
+    }
+
+    .h2{
+        @apply text-xl md:text-2xl uppercase font-semibold text-center;
+    }
+
+    .h3{
+        @apply text-xl md:text-2xl font-semibold;
+    }
+
+    .h-line{
+        @apply w-2/3 md:w-1/3 bg-white border-white mt-4 md:mt-6 mx-auto border-2;
+    }
+
+    .h-cd{
+        @apply h2 text-2xl font-extrabold pb-6;
+    }
+
+    .half{
+        @apply w-1/2 pt-4 px-0 md:px-6 lg:px-12;
+    }
+
+    .p{
+        @apply text-base md:text-xl;
+    }
+
+    .logo-info{
+        @apply left-0 bg-white mx-12 relative;
+        margin-top: -18rem;
+        border-radius: 6rem;
+    }
+
+    .cd-wrapper{
+        @apply block mx-auto lg:mx-0 lg:flex;
+    }
+
+    .cd-img-container{
+        @apply cursor-pointer duration-1000 mx-auto lg:mx-0 w-full max-w-xs md:max-w-lg lg:w-1/3;
+    }
+
+    .cd-img-container:hover .cd-img{
+        @apply lg:opacity-20 lg:animate-none;
+    }
+
+    .cd-img-container:hover .com-logo{
+        @apply animate-none opacity-100;
+        transform: scale(1.25);
+    }
+
+    .cd-img-container:hover .overlay-text{
+        @apply lg:opacity-100;
+    }
+
+    .cd-img{
+        @apply xl:px-16 lg:mx-0 mx-auto duration-1000 animate-pulse ease-in-out;
+    }
+
+    .overlay-text{
+        @apply relative lg:opacity-0 duration-1000 px-4 xl:px-10 text-lg;
+        margin-top: -60%;
+    }
+
+    .ot-pm{
+        margin-top: -65%;
+    }
+
+    .map-container{
+        @apply half pr-16 h-96 max-h-96;
+    }
+
+    .ic-social{
+        @apply pl-2 w-12;
+    }
+
+    @media (max-width: 1279px) {
+        .logo-info{
+            @apply mx-0 lg:mx-4;
+            border-radius: 4rem;
+        }
+
+        .com-logo:hover{
+            transform: scale(1.1);
+        }
+
+        .overlay-text{
+            margin-top: -85%;
+        }
+
+        .ot-pm{
+            margin-top: -90%;
+        }
+    }
+
+    @media (max-width: 1023px){
+        .cd-wrapper{
+            @apply max-w-screen-md;
+        }
+
+        .h-cd,
+        .overlay-text{
+            @apply hidden;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .logo-info{
+            margin-top: -11rem;
+            border-radius: 2rem;
+        }
+
+        .transition{
+            border-radius: 0 0 3rem 3rem;
+        }
+    }
+
+    @media (max-width: 639px) {
+        .logo-info{
+            @apply rounded-3xl;
+        }
+    }
+}
+
+#himti-icon{
+    width: 50%;
+}
+
+.border-dark{
+    border-color: #0C0217;
+    background-color: #0C0217;
+}
+
+.logo-info-img{
+    height: 50vh;
+}
