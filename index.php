@@ -147,64 +147,120 @@ include('components/journey-items.php');
             </a>
         </div>
     </div>
-    <div class="mx-auto" style="max-width: 1536px">
-      <h1 class="title">
-        <span>TESTIMONIES</span>
-      </h1>
-      <br />
-      <div class="d-flex container profwrapper shadow-lg">
-        <div
-          class="d-flex align-items-center profselector"
-        >
-		<?php
-		$first = true;
-		if($testimonies != NULL && count($testimonies) > 0){
-			foreach ($testimonies as $testimony) {
-				echo '
-          		<img
-            		id="', $testimony["id"], 'Photo"
-            		onclick="testimoniesImgClick(\'', $testimony["id"], '\')"
-            		class="profselector__img rounded-circle profselector__img', $first ? " profselector__img--active " : "",'"
-            		src="assets/img/testimonies-thumbnail/', $testimony["id"], 'Photo.webp"
-				/>';
-				$first = false;
-			}
-		}
-		?>
-        </div>
-	  	<?php
-		if($testimonies != NULL && count($testimonies) > 0){
-			// Active profile = pertama, kecuali kalo ada request.
-			$first = true;
-			$valid_ids = array(); //Validation biar ga ada XSS.
-			foreach ($testimonies as $testimony) {
-				echo '<div id="', $testimony["id"], 'Profile" class="profdesc shadow-lg', $first ? '' : ' profdesc--hidden', '">';
-					echo '<div class="profdesc__summary">';
-						echo '
-						<img class="profdesc__sumimg" src="assets/img/testimonies-thumbnail/', $testimony["id"], 'Photo.webp"/> <br> <br>
-						<h2 class="profdesc__name fw-bold">', $testimony["name"] ,'</h2>
-						<h3 class="profdesc__job fs-6 fw-normal mb-4">', $testimony["job"], '</h3>
-						<div class="profdesc__years"> Kepengurusan HIMTI: ', $testimony["active_years"], '</div>';
-                        echo '<ul class="profdesc__experiences">';
-                        foreach ($testimony['experiences'] as $experience){
-                            echo '<li><b> ', $experience['experience'], '</b> (', $experience['year'] , ') </li>';
+
+     <div class="testimonies-section">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header text-center mb-5">
+                <h1 class="section-title">TESTIMONIES</h1>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Dengarkan pengalaman dan cerita inspiratif dari alumni HIMTI yang telah berkembang di berbagai bidang
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Profile Selector -->
+                <div class="col-lg-4">
+                    <div class="profiles-container">
+                        <h3 class="profiles-title">Alumni HIMTI</h3>
+                        <div class="profiles-list">
+                            <?php
+                            $first = true;
+                            if($testimonies != NULL && count($testimonies) > 0) {
+                                foreach ($testimonies as $index => $testimony) {
+                                    $activeClass = $first ? 'active' : '';
+                                    echo '
+                                    <div class="profile-card ' . $activeClass . '" 
+                                        onclick="showTestimony(\'' . $testimony["id"] . '\', ' . $index . ')" 
+                                        data-testimony-id="' . $testimony["id"] . '">
+                                        <div class="profile-card-content">
+                                            <img src="assets/img/testimonies-thumbnail/' . $testimony["id"] . 'Photo.webp" 
+                                                alt="' . $testimony["name"] . '" 
+                                                class="profile-avatar">
+                                            <div class="profile-info">
+                                                <h4 class="profile-name">' . $testimony["name"] . '</h4>
+                                                <p class="profile-job">' . $testimony["job"] . '</p>
+                                                <span class="profile-years">' . $testimony["active_years"] . '</span>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                    $first = false;
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimony Content -->
+                <div class="col-lg-8">
+                    <div class="testimony-container">
+                        <?php
+                        $first = true;
+                        if($testimonies != NULL && count($testimonies) > 0) {
+                            foreach ($testimonies as $index => $testimony) {
+                                $activeClass = $first ? 'active' : '';
+                                echo '
+                                <div class="testimony-content ' . $activeClass . '" id="testimony-' . $testimony["id"] . '">
+                                    <div class="testimony-header">
+                                        <img src="assets/img/testimonies-thumbnail/' . $testimony["id"] . 'Photo.webp" 
+                                                alt="' . $testimony["name"] . '" 
+                                                class="testimony-avatar">
+                                        <div class="testimony-info">
+                                            <h2 class="testimony-name">' . $testimony["name"] . '</h2>
+                                            <p class="testimony-job">' . $testimony["job"] . '</p>
+                                            <span class="testimony-period">Kepengurusan HIMTI: ' . $testimony["active_years"] . '</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="experiences-section">
+                                        <h3 class="experiences-title">Pengalaman di HIMTI</h3>
+                                        <ul class="experiences-list">';
+                                
+                                foreach ($testimony['experiences'] as $experience) {
+                                    echo '<li><strong>' . $experience['experience'] . '</strong> (' . $experience['year'] . ')</li>';
+                                }
+                                
+                                echo '
+                                        </ul>
+                                    </div>
+
+                                    <div class="testimony-text">
+                                        <div class="quote-icon">"</div>
+                                        <blockquote>' . nl2br($testimony["testimony"]) . '</blockquote>
+                                    </div>
+                                </div>';
+                                $first = false;
+                            }
                         }
-                        echo '</ul>';
-					echo '</div>';
-					echo '<div class="profdesc__story mt-4">', $testimony["testimony"],'</div>';
-				echo'</div>';
-				array_push($valid_ids, $testimony["id"]);
-				if($first){
-					echo '<script type="text/javascript">activeProfile="',$testimony["id"],'"</script>';
-				}
-				$first = false;
-			}
-			if(array_key_exists("profile", $_GET) && in_array($_GET["profile"], $valid_ids)){
-				echo '<script type="text/javascript">testimoniesImgClick("',$_GET["profile"],'")</script>';
-			}
-		}
-		?>
-      </div>
+                        ?>
+
+                        <!-- Navigation -->
+                        <div class="testimony-navigation">
+                            <button class="nav-btn prev-btn" onclick="previousTestimony()">
+                                <span>‹</span> Previous
+                            </button>
+                            
+                            <div class="nav-dots">
+                                <?php
+                                if($testimonies != NULL && count($testimonies) > 0) {
+                                    foreach ($testimonies as $index => $testimony) {
+                                        $activeClass = $index === 0 ? 'active' : '';
+                                        echo '<span class="nav-dot ' . $activeClass . '" onclick="showTestimonyByIndex(' . $index . ')"></span>';
+                                    }
+                                }
+                                ?>
+                            </div>
+                            
+                            <button class="nav-btn next-btn" onclick="nextTestimony()">
+                                Next <span>›</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <div class="ourarticle">
@@ -377,6 +433,7 @@ include('components/journey-items.php');
     //It also supports NodeList
     VanillaTilt.init(document.querySelectorAll(".upcomingeventrow"));
     </script>
+    <script src="assets/js/testimonies.js"></script>
     <script src="assets/js/RSShandle.js"></script>
 </body>
 
